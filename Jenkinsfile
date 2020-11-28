@@ -23,7 +23,7 @@ node {
          d=`date +%m-%d-%Y`
         echo $d
         sh "tar czvf next.tar.gz .next"
-        sh "tar czvf app.${d}.tar.gz next"
+        sh "tar czvf app.$d.tar.gz .next"
         archiveArtifacts "**/*.tar.gz"
     }
 }
