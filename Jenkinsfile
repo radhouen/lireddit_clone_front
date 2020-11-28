@@ -20,7 +20,8 @@ node {
    }
    
    stage('Create artifact after build') {
-        d=`date +%m-%d-%Y`
+
+        def d=new Date().format( 'yyyyMMdd' )
         sh "tar czvf next.tar.gz .next"
         sh "tar czvf app.{$d}.tar.gz .next"
         archiveArtifacts "**/*.tar.gz"
